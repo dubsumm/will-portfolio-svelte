@@ -1,33 +1,53 @@
 <script>
 	import Step from './Step.svelte';
-	import {contactModalStore} from '../lib/stores/contactModalStore'
+	import { contactModalStore } from '../lib/stores/contactModalStore';
 	let steps = [
 		{
-			name: 'BluRooz, the Blue Collar Gurus',
-			href: 'https://app.blurooz.com/feed',
-			icon: 'fa-solid fa-mobile-screen-button',
+			name: 'Command Post, The BluWorkz App',
+			href: 'https://app.bluworkz.com/signin?continueUrl=/home?from=www.bluworkz.com',
+			icon: 'fa-regular fa-building',
 			description:
-				'The app is a one-stop shop for all things blue collar, from job postings to tool rentals.'
+				'The companion to a premier Virtual Reality training platform. Realtime video training features, paired with unique session based training data visualization gives this tool a powerful punch for modern day skills training.',
+				html: `<p>
+					The Command Post is a <strong class="text-green-400"
+						>Vue3 + Firebase Realtime Database + Node.js + Express.js</strong
+					>
+					web application that is scaffolded for mobile, hosted on
+					<strong class="text-green-400">Firebase</strong>
+				</p>`
 		},
 		{
 			name: 'V.G. Burke Author site',
 			href: 'https://www.vgburke.com/',
 			icon: 'fa-solid fa-pen-nib',
 			description:
-				'a great simple site for a local creator looking to update his web presence. High level  SEO so that publishers looking for great new talent can find it.'
+				'A great simple site for a local creator looking to update his web presence. High level  SEO so that publishers looking for great new talent can find it.',
+				html: `	<p>
+					This banner site built with <strong class="text-green-400">Webflow + Webflow CMS</strong>
+					is
+				</p>`
 		},
+
 		{
-			name: 'Command Post, The BluWorkz App',
-			href: 'https://app.bluworkz.com/signin?continueUrl=/home?from=www.bluworkz.com',
-			icon: 'fa-regular fa-building',
+			name: 'BluRooz, the Blue Collar Gurus',
+			href: 'https://app.blurooz.com/feed',
+			icon: 'fa-solid fa-mobile-screen-button',
 			description:
-				'The companion to a premier Virtual Reality training platform. Realtime video training features, paired with unique session based training data visualization gives this tool a powerful punch for modern day skills training.'
-		}
+				'The app is a one-stop shop for all things blue collar, from job postings to tool rentals. This feature rich custom app, utilizes modern APIs such as geolocation, social & biometric sign in, & cloud push messaging for great app updates.',
+				html: `	<p>
+					This hybrid built web/mobile app is a one-stop shop for all things blue collar, from job
+					postings to tool rentals. <strong class="text-green-400"
+						>Vue3 + Firestore + Node.j + Express.js + Ionic/Capacitor/Cordova + Java</strong
+					>
+					hosted on <strong class="text-green-400">Heroku</strong>
+					
+				</p>`
+		},
+
 	];
 
 	let benefits = [
 		{
-			metric: '10x',
 			name: 'a certified Developer',
 			description:
 				'I taught myself to code using free online resources & absolutely fell in love with the creativity & problem solving that is involved in developing & engineering innovative new online experiences. This lead me to getting a professional certificate from Georgia Tech in Full-Stack Web Development. From 2021 starting with JavaScript, HTML & CSS, & Python, I have now expanded my expertise to backend programming, UI/UX design, database administration, cloud services & much much more. My day job is a Software Developer for a startup in Savannah-GA.'
@@ -67,7 +87,7 @@
 					class=" absolute top-0 right-full w-full h-full bg-green-400 opacity-30 group-hover:translate-x-full z-1 duration-200"
 				></div>
 				<h4 class="relative">Get in touch &rarr;</h4>
-    </button>
+			</button>
 		</div>
 		<div class="relative shadow-2xl grid place-items-center">
 			<img src={'images/profile.png'} alt="Me!" class=" object-cover z-2 h-[70vh]" />
@@ -89,29 +109,12 @@
 			<p>Watch the video</p>
 		</a> -->
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
-			<Step step={steps[0]}>
-				<p>
-					This hybrid built web/mobile app is a one-stop shop for all things blue collar, from job postings to tool rentals. <strong
-						class="text-green-400">Vue3 + Firestore + Node.j + Express.js + Ionic/Capacitor/Cordova + Java</strong
-					> hosted on <strong
-						class="text-green-400">Heroku</strong>
-					This feature rich custom app, utilizes modern APIs such as geolocation, social & biometric sign
-					in, & cloud push messaging for great app updates.
-				</p>
+			{#each steps as step}
+			<Step step={step}>
+				<p>{@html step.html}</p>
+				<p>{step.description}</p>
 			</Step>
-			<Step step={steps[1]}>
-				<p>
-					This banner site built with <strong class="text-green-400">Webflow + Webflow CMS</strong> is 
-					 {steps[1].description}
-				</p>
-			</Step>
-			<Step step={steps[2]}>
-				<p>
-					The Command Post is a <strong class="text-green-400">Vue3 + Firebase Realtime Database + Node.js + Express.js</strong>
-					web application that is scaffolded for mobile, hosted on
-					<strong class="text-green-400">Firebase</strong> {steps[2].description}
-				</p>
-			</Step>
+			{/each}
 		</div>
 	</section>
 	<section
@@ -143,8 +146,11 @@
 				</div>
 			{/each}
 		</div>
-	
 
-		<h5 class="mx-auto text-xl sm:text-2xl md:text-3xl text-center">Let's <strong class="text-green-400">invest</strong> in your organization's future together! <br/> Ready for a <strong class="text-green-400">chat?</strong></h5>
+		<h5 class="mx-auto text-xl sm:text-2xl md:text-3xl text-center">
+			Let's <strong class="text-green-400">invest</strong> in your organization's future together!
+			<br />
+			Ready for a <strong class="text-green-400">chat?</strong>
+		</h5>
 	</section>
 </main>
