@@ -76,8 +76,8 @@
 				<span class="text-green-400 poppins">Consultant</span>
 			</h2>
 			<p class="text-base sm:text-lg md:text-xl">
-				My <span class="text-green-400"> favorite tech</span> includes JavaScript (Vue3 or SvelteKit),
-				TailwindCSS, Node.js + Express.js & Firebase/Firestore!
+				My <span class="text-green-400"> favorite tech stack</span> includes JavaScript (Vue3 or SvelteKit),
+				TailwindCSS, Node.js + Express.js & Firebase!
 			</p>
 			<button
 				on:click={() => contactModalStore.openModal()}

@@ -19,7 +19,7 @@
 			: 'py-6 bg-transparent border-transparent border-b')}
 >
 	<h1 class=" font-medium hidden sm:block"><b class="font-bold poppins">Will</b> Summerlin</h1>
-	<div class="block sm:hidden w-16 shadow-slate-950">
+	<div class="block sm:hidden w-12 shadow-slate-950">
 		<img src={'images/ws.png'} alt="ws" />
 	</div>
 	<div class="sm:flex ml-auto pr-4 items-center gap-4 hidden">
