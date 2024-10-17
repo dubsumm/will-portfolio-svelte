@@ -1,21 +1,24 @@
 <script>
 	import Step from './Step.svelte';
-
+	import {contactModalStore} from '../lib/stores/contactModalStore'
 	let steps = [
 		{
 			name: 'BluRooz, the Blue Collar Gurus',
+			href: 'https://app.blurooz.com/feed',
 			icon: 'fa-solid fa-mobile-screen-button',
 			description:
 				'The app is a one-stop shop for all things blue collar, from job postings to tool rentals.'
 		},
 		{
 			name: 'V.G. Burke Author site',
+			href: 'https://www.vgburke.com/',
 			icon: 'fa-solid fa-pen-nib',
 			description:
-				'a great simple site for a local creator looking to update his web presence.'
+				'a great simple site for a local creator looking to update his web presence. High level  SEO so that publishers looking for great new talent can find it.'
 		},
 		{
 			name: 'Command Post, The BluWorkz App',
+			href: 'https://app.bluworkz.com/signin?continueUrl=/home?from=www.bluworkz.com',
 			icon: 'fa-regular fa-building',
 			description:
 				'The companion to a premier Virtual Reality training platform. Realtime video training features, paired with unique session based training data visualization gives this tool a powerful punch for modern day skills training.'
@@ -27,7 +30,7 @@
 			metric: '10x',
 			name: 'a certified Developer',
 			description:
-				'I taught myself to code using free online resources & absolutely fell in love with the creativity & problem solving that is involved in developing & engineering innovative new online experiences. This lead me to getting a professional Certificate from Georgia Tech in Full-Stack Web Development. From 2021 starting with JavaScript, HTML & CSS, & Python, I have now expanded my expertise to backend programming, UI/UX design, database administration, cloud services & much much more.'
+				'I taught myself to code using free online resources & absolutely fell in love with the creativity & problem solving that is involved in developing & engineering innovative new online experiences. This lead me to getting a professional certificate from Georgia Tech in Full-Stack Web Development. From 2021 starting with JavaScript, HTML & CSS, & Python, I have now expanded my expertise to backend programming, UI/UX design, database administration, cloud services & much much more. My day job is a Software Developer for a startup in Savannah-GA.'
 		},
 		{
 			name: 'a product design & UX finatic',
@@ -57,6 +60,7 @@
 				TailwindCSS, Node.js + Express.js & Firebase/Firestore!
 			</p>
 			<button
+				on:click={() => contactModalStore.openModal()}
 				class=" greenShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
 			>
 				<div

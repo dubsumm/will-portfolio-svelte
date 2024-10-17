@@ -1,6 +1,8 @@
 <script>
     import Footer from "../components/Footer.svelte";
     import Header from "../components/Header.svelte";
+    import Modal from "../components/Modal.svelte";
+    import {contactModalStore} from '../lib/stores/contactModalStore'
     import "../app.css";
     let y;
     let innerWidth = 0;
@@ -30,5 +32,8 @@
     <Header {y} {innerHeight}/>
     <slot />
     <Footer />
+    {#if $contactModalStore.isOpen}
+        <Modal />
+    {/if}
 </div>
 <svelte:window bind:scrollY={y} bind:innerHeight bind:innerWidth />

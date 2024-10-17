@@ -1,9 +1,9 @@
 <script>
-	export let showModal; // boolean
+	import {contactModalStore} from '../lib/stores/contactModalStore'
 
 	let dialog; // HTMLDialogElement
 
-	$: if (dialog && showModal) dialog.showModal();
+		$: if (dialog && $contactModalStore.isOpen) dialog.showModal();
 
 	const socials = [
 		{ link: 'https://www.linkedin.com/in/willbsummerlin/', icon: 'fa-brands fa-linkedin-in' },
@@ -15,7 +15,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
 	bind:this={dialog}
-	on:close={() => (showModal = false)}
+	on:close={() => contactModalStore.closeModal()}
 	on:click|self={() => dialog.close()}
 	class=" bg-slate-800 text-white text-xl"
 >
