@@ -1,15 +1,13 @@
 <script>
 	import { contactModalStore } from '../lib/stores/contactModalStore';
-	import Modal from './Modal.svelte';
-
-	let showModal = false;
 
 	export let y;
+
 	let tabs = [
 		{ name: 'Projects', link: '#projects' },
 		{ name: 'About Me', link: '#about' }
-		// { name: 'Contact', link: '#contact' }
 	];
+
 </script>
 
 <header

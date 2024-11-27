@@ -1,7 +1,6 @@
 <script>
 	const socials = [
 		{ link: 'https://www.linkedin.com/in/willbsummerlin/', icon: 'fa-brands fa-linkedin-in' },
-		{ link: 'https://wellfound.com/u/william-b-summerlin', icon: 'fa-brands fa-angellist' },
 		{ link: 'https://x.com/WillieSumm', icon: 'fa-brands fa-x-twitter' }
 	];
 </script>
